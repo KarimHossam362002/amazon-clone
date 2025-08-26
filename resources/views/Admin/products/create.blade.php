@@ -15,7 +15,7 @@
 
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('products.store') }}" method="POST">
+        <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
@@ -35,7 +35,7 @@
             @enderror
             <div>
                 <label for="price" class="form-label">Product Price:</label>
-                <input type="number" value="{{ old('price') }}" class="form-control w-50" name="price" id="price">
+                <input type="number" class="form-control w-50" name="price" id="price">
             </div>
 
            @error('discount')
@@ -79,9 +79,9 @@
                 <input type="text" name="brand" class="form-control">
             </div>
 
-            <div class="form-group">
-                <label>Image URL</label>
-                <input type="text" name="image_url" class="form-control">
+           <div class="form-group">
+                <label>Image</label>
+                <input type="file" name="image" class="form-control">
             </div>
 
             <button type="submit" class="btn btn-success">

@@ -21,7 +21,7 @@ return new class extends Migration
             // $table->unsignedBigInteger('category_id')->nullable();
             $table->string('brand', 100)->nullable();
             $table->decimal('rating_avg', 2, 1)->nullable();
-            $table->string('image_url', 255)->nullable();
+            $table->string('image', 255)->nullable();
             $table->foreignId('category_id')->nullable()->constrained('categories')
             ->onUpdate('cascade')
             ->onDelete('cascade');

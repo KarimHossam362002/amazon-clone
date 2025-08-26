@@ -9,7 +9,7 @@
 @section('content')
 <div class="card">
     <div class="card-body">
-        <form action="{{ route('products.update', $product) }}" method="POST">
+        <form action="{{ route('products.update', $product) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -51,8 +51,8 @@
             </div>
 
             <div class="form-group">
-                <label>Image URL</label>
-                <input type="text" name="image_url" class="form-control" value="{{ $product->image_url }}">
+                <label>Image</label>
+                <input type="file" name="image" class="form-control" value="{{ $product->image }}">
             </div>
 
             <button type="submit" class="btn btn-primary">
