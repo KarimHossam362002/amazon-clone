@@ -14,13 +14,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('payments', function (Blueprint $table) {
-            $table->id('payment_id');
-            $table->unsignedBigInteger('order_id')->unique();
+            $table->id();
+            // $table->unsignedBigInteger('order_id')->unique()->nullable();
             $table->enum('payment_method', ['Credit Card', 'PayPal', 'Bank Transfer', 'Cash']);
             $table->decimal('amount', 10, 2);
             $table->dateTime('payment_date')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->enum('payment_status', ['Pending', 'Completed', 'Failed'])->default('Pending');
-            $table->foreign('order_id')->references('order_id')->on('orders');
+            $table->foreignId('order_id')->nullable()->constrained('orders')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

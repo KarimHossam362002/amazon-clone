@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+       $products = Product::select('id', 'name', "description", "price","price_after_discount", "image_url", "stock_quantity", 'brand','rating_avg')
+            ->paginate(5);
+
+        return view('Admin.products.index', compact('products'));
     }
 
     /**
@@ -20,7 +24,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::select('id','name')->get();
+        return view('Admin.products.create' , compact('categories'));
     }
 
     /**
@@ -36,7 +41,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('Admin.products.show', compact('product'));
     }
 
     /**

@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Dashboard',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => '<b>Dashboard</b>',
+    'logo_img' => 'vendor/adminlte/dist/img/Amazon-icon.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -86,7 +86,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'vendor/adminlte/dist/img/Amazon-icon.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -113,11 +113,11 @@ return [
         'enabled' => true,
         'mode' => 'fullscreen',
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
-            'alt' => 'AdminLTE Preloader Image',
+            'path' => 'vendor/adminlte/dist/img/Amazon-icon.png',
+            'alt' => 'Amazon-icon Preloader Image',
             'effect' => 'animation__shake',
-            'width' => 60,
-            'height' => 60,
+            'width' => 100,
+            'height' => 100,
         ],
     ],
 
@@ -376,20 +376,65 @@ return [
                 ],
             ],
         ],
-        ['header' => 'labels'],
+        ['header' => 'Amazon Database'],
         [
-            'text' => 'important',
-            'icon_color' => 'red',
-            'url' => '#',
-        ],
-        [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
-            'url' => '#',
-        ],
-        [
-            'text' => 'information',
+            'text' => 'Users',
             'icon_color' => 'cyan',
+            'icon' => 'fas fa-fw fa-user',
+            'url' => '',
+        ],
+        [
+            'text' => 'Categories',
+            'icon_color' => 'yellow',
+            'icon' => 'fas fa-fw fa-folder-open',
+            'url' => '#',
+        ],
+        [
+            'text' => 'Products',
+            'icon_color' => 'brown',
+            'icon' => 'fas fa-fw fa-box',
+            'route' => 'products.index',
+        ],
+        [
+            'text' => 'Orders',
+            'icon_color' => 'white',
+            'icon' => 'fas fa-fw fa-receipt',
+            'url' => '#',
+        ],
+        [
+            'text' => 'Order Items',
+            'icon_color' => 'red',
+            'icon' => 'fas fa-fw fa-list',
+            'url' => '#',
+        ],
+        [
+            'text' => 'Carts',
+            'icon_color' => 'white',
+            'icon' => 'fas fa-fw fa-shopping-cart',
+            'url' => '#',
+        ],
+        [
+            'text' => 'Cart Items',
+            'icon_color' => 'white',
+            'icon' => 'fas fa-fw fa-clipboard-list',
+            'url' => '#',
+        ],
+        [
+            'text' => 'Reviews',
+            'icon_color' => 'white',
+            'icon' => 'fas fa-fw fa-comment-dots',
+            'url' => '#',
+        ],
+        [
+            'text' => 'Payments',
+            'icon_color' => 'cyan',
+            'icon' => 'fas fa-fw fa-credit-card',
+            'url' => '#',
+        ],
+        [
+            'text' => 'Shipments',
+            'icon_color' => 'yellow',
+            'icon' => 'fas fa-fw fa-truck',
             'url' => '#',
         ],
     ],

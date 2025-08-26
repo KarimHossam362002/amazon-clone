@@ -12,11 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('shipments', function (Blueprint $table) {
-            $table->id('shipment_id');
-            $table->unsignedBigInteger('order_id')->unique();
+            $table->id();
+            // $table->unsignedBigInteger('order_id')->unique()->nullable();
             $table->dateTime('shipment_date')->nullable();
             $table->enum('status', ['Pending', 'In Transit', 'Delivered', 'Returned'])->default('Pending');
-            $table->foreign('order_id')->references('order_id')->on('orders');
+            $table->foreignId('order_id')->nullable()->constrained('orders')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

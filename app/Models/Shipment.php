@@ -9,12 +9,12 @@ class Shipment extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'shipment_id';
+    protected $primaryKey = 'id';
 
     protected $fillable = ['order_id', 'shipment_date', 'status'];
 
     public function order()
     {
-        return $this->belongsTo(Order::class, 'order_id', 'order_id');
+        return $this->belongsTo(Order::class, 'order_id', 'id');
     }
 }

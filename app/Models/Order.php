@@ -9,7 +9,7 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'order_id';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'user_id', 'order_date', 'shipping_address',
@@ -23,16 +23,16 @@ class Order extends Model
 
     public function items()
     {
-        return $this->hasMany(OrderItem::class, 'order_id', 'order_id');
+        return $this->hasMany(OrderItem::class, 'order_id', 'id');
     }
 
     public function payment()
     {
-        return $this->hasOne(Payment::class, 'order_id', 'order_id');
+        return $this->hasOne(Payment::class, 'order_id', 'id');
     }
 
     public function shipment()
     {
-        return $this->hasOne(Shipment::class, 'order_id', 'order_id');
+        return $this->hasOne(Shipment::class, 'order_id', 'id');
     }
 }

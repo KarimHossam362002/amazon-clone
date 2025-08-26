@@ -16,15 +16,15 @@ Route::get('/admin', function () {
 });
 
 Route::resources([
-    'categories' => CategoryController::class,
-    'products' => ProductController::class,
-    'orders' => OrderController::class,
-    'order-items' => OrderItemController::class,
-    'carts' => CartController::class,
-    'cart-items' => CartItemController::class,
-    'reviews' => ReviewController::class,
-    'payments' => PaymentController::class,
-    'shipments' => ShipmentController::class,
+    'admin/categories' => CategoryController::class,
+    'admin/products' => ProductController::class,
+    'admin/orders' => OrderController::class,
+    'admin/order-items' => OrderItemController::class,
+    'admin/carts' => CartController::class,
+    'admin/cart-items' => CartItemController::class,
+    'admin/reviews' => ReviewController::class,
+    'admin/payments' => PaymentController::class,
+    'admin/shipments' => ShipmentController::class,
 ]);
 
 

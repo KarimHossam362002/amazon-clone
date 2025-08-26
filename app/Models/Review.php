@@ -9,7 +9,7 @@ class Review extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'review_id';
+    protected $primaryKey = 'id';
 
     protected $fillable = ['user_id', 'product_id', 'rating', 'comment'];
 
@@ -20,6 +20,6 @@ class Review extends Model
 
     public function product()
     {
-        return $this->belongsTo(Product::class, 'product_id', 'product_id');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 }
