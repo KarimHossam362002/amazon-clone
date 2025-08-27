@@ -25,7 +25,7 @@ class ProductFactory extends Factory
             "category_id" => Category::inRandomOrder()->first()?->id,
             'brand' => $this->faker->company(),
             'rating_avg' => $this->faker->randomFloat(1, 1, 5),
-            'image_url' => $this->faker->imageUrl(200, 200, 'products', true),
+            'image' => $this->faker->imageUrl(200, 200, 'products', true),
         ];
     }
 }
