@@ -335,7 +335,7 @@ return [
     // 🔹 Orders
     [
         'text' => 'Orders',
-        'route' => '',
+        'route' => 'orders.index',
         'icon'  => 'fas fa-receipt',
         'icon_color' => 'blue',
     ],

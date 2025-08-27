@@ -16,9 +16,6 @@ return new class extends Migration
             // $table->unsignedBigInteger('order_id')->unique()->nullable();
             $table->dateTime('shipment_date')->nullable();
             $table->enum('status', ['Pending', 'In Transit', 'Delivered', 'Returned'])->default('Pending');
-            $table->foreignId('order_id')->nullable()->constrained('orders')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
             $table->timestamps();
         });
     }

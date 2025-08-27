@@ -20,9 +20,6 @@ return new class extends Migration
             $table->decimal('amount', 10, 2);
             $table->dateTime('payment_date')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->enum('payment_status', ['Pending', 'Completed', 'Failed'])->default('Pending');
-            $table->foreignId('order_id')->nullable()->constrained('orders')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
             $table->timestamps();
         });
     }

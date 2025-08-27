@@ -18,10 +18,6 @@ Route::get('/admin', function () {
 Route::resources([
     'admin/categories' => CategoryController::class,
     'admin/products' => ProductController::class,
-    'admin/orders' => OrderController::class,
-    'admin/order-items' => OrderItemController::class,
-    'admin/carts' => CartController::class,
-    'admin/cart-items' => CartItemController::class,
     'admin/reviews' => ReviewController::class,
     'admin/payments' => PaymentController::class,
     'admin/shipments' => ShipmentController::class,
