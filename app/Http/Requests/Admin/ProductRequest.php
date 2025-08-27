@@ -26,7 +26,7 @@ class ProductRequest extends FormRequest
             'description'    => 'nullable|string',
             'price'          => 'required|numeric|min:0',
             'stock_quantity' => 'required|integer|min:0',
-            'category_id'    => 'nullable|exists:categories,category_id',
+            'category_id'    => 'nullable|exists:categories,id',
             'brand'          => 'nullable|string|max:100',
             'rating_avg'     => 'nullable|numeric|min:1|max:5',
             'image'          => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
