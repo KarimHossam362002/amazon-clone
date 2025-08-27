@@ -41,10 +41,10 @@
                             src="
                             {{-- file exist --}}
                             @php
-                            $imagePath = asset('assets/images/products/' . $product->image_url); @endphp
+                            $imagePath = asset('assets/images/products/' . $product->image); @endphp
                              {{-- @dd(!file_exists(public_path($imagePath))) --}}
                                 {{-- @dd(empty($doctorData->image)) --}}
-                            @if (!file_exists(public_path($imagePath)) && !empty($product->image_url)) {{ $imagePath }}
+                            @if (!file_exists(public_path($imagePath)) && !empty($product->image)) {{ $imagePath }}
                             @else
                             {{ asset('assets/images/products/defaultProduct.png') }} @endif
                             "

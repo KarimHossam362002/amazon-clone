@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-       $products = Product::select('id', 'name', "description", "price","price_after_discount", "image_url", "stock_quantity", 'brand','rating_avg')
+       $products = Product::select('id', 'name', "description", "price","price_after_discount", "image", "stock_quantity", 'brand','rating_avg')
             ->paginate(5);
 
         return view('Admin.products.index', compact('products'));
