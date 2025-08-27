@@ -257,7 +257,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'admin',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -299,145 +299,95 @@ return [
     */
 
     'menu' => [
-        // Navbar items:
-        [
-            'type' => 'navbar-search',
-            'text' => 'search',
-            'topnav_right' => true,
-        ],
-        [
-            'type' => 'fullscreen-widget',
-            'topnav_right' => true,
-        ],
-
-        // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
-        ],
-        [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
-        ],
-        ['header' => 'Amazon Database'],
-        [
-            'text' => 'Users',
-            'icon_color' => 'cyan',
-            'icon' => 'fas fa-fw fa-user',
-            'url' => '',
-        ],
-        [
-            'text' => 'Categories',
-            'icon_color' => 'yellow',
-            'icon' => 'fas fa-fw fa-folder-open',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Products',
-            'icon_color' => 'brown',
-            'icon' => 'fas fa-fw fa-box',
-            'route' => 'products.index',
-        ],
-        [
-            'text' => 'Orders',
-            'icon_color' => 'white',
-            'icon' => 'fas fa-fw fa-receipt',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Order Items',
-            'icon_color' => 'red',
-            'icon' => 'fas fa-fw fa-list',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Carts',
-            'icon_color' => 'white',
-            'icon' => 'fas fa-fw fa-shopping-cart',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Cart Items',
-            'icon_color' => 'white',
-            'icon' => 'fas fa-fw fa-clipboard-list',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Reviews',
-            'icon_color' => 'white',
-            'icon' => 'fas fa-fw fa-comment-dots',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Payments',
-            'icon_color' => 'cyan',
-            'icon' => 'fas fa-fw fa-credit-card',
-            'url' => '#',
-        ],
-        [
-            'text' => 'Shipments',
-            'icon_color' => 'yellow',
-            'icon' => 'fas fa-fw fa-truck',
-            'url' => '#',
-        ],
+    // 🔹 Dashboard
+    [
+        'text' => 'Dashboard',
+        'url'  => '/admin',
+        'icon' => 'fas fa-tachometer-alt',
     ],
+
+    ['header' => 'Amazon Database'],
+
+    // 🔹 Users
+    [
+        'text' => 'Users',
+        'route' => '', // make sure you have Users resource
+        'icon'  => 'fas fa-users',
+        'icon_color' => 'cyan',
+    ],
+
+    // 🔹 Categories
+    [
+        'text' => 'Categories',
+        'route' => '',
+        'icon'  => 'fas fa-folder-open',
+        'icon_color' => 'yellow',
+    ],
+
+    // 🔹 Products
+    [
+        'text' => 'Products',
+        'route' => 'products.index',
+        'icon'  => 'fas fa-box',
+        'icon_color' => 'orange',
+    ],
+
+    // 🔹 Orders
+    [
+        'text' => 'Orders',
+        'route' => '',
+        'icon'  => 'fas fa-receipt',
+        'icon_color' => 'blue',
+    ],
+
+    // 🔹 Order Items
+    [
+        'text' => 'Order Items',
+        'route' => '',
+        'icon'  => 'fas fa-list',
+        'icon_color' => 'red',
+    ],
+
+    // 🔹 Carts
+    [
+        'text' => 'Carts',
+        'route' => '',
+        'icon'  => 'fas fa-shopping-cart',
+        'icon_color' => 'green',
+    ],
+
+    // 🔹 Cart Items
+    [
+        'text' => 'Cart Items',
+        'route' => '',
+        'icon'  => 'fas fa-clipboard-list',
+        'icon_color' => 'purple',
+    ],
+
+    // 🔹 Reviews
+    [
+        'text' => 'Reviews',
+        'route' => '',
+        'icon'  => 'fas fa-comment-dots',
+        'icon_color' => 'teal',
+    ],
+
+    // 🔹 Payments
+    [
+        'text' => 'Payments',
+        'route' => '',
+        'icon'  => 'fas fa-credit-card',
+        'icon_color' => 'cyan',
+    ],
+
+    // 🔹 Shipments
+    [
+        'text' => 'Shipments',
+        'route' => '',
+        'icon'  => 'fas fa-truck',
+        'icon_color' => 'yellow',
+    ],
+],
 
     /*
     |--------------------------------------------------------------------------

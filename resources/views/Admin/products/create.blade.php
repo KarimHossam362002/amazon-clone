@@ -33,32 +33,37 @@
                     {{ $message }}
                 </div>
             @enderror
-            <div>
+            <div class="form-group">
                 <label for="price" class="form-label">Product Price:</label>
                 <input type="number" class="form-control w-50" name="price" id="price">
             </div>
 
-           @error('discount')
-            <div class="alert alert-danger">
-                {{ $message }}
+            @error('discount')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
+            <div class="form-group">
+                <label for="discount" class="form-label">Product Discount (%):</label>
+                <input type="number" class="form-control w-50" name="discount" id="discount" min="0" max="100">
+                <small id="warning" class="text-danger d-none">Enter product price first</small>
             </div>
-        @enderror
-        <div>
-            <label for="discount" class="form-label">Product discount:</label>
-            <input type="number" class="form-control w-50" name="discount" id="discount">
-            <span id="warning" style="color: red;">Enter product price first</span>
-        </div>
-        {{--  --}}
-        @error('price_after_discount')
-            <div class="alert alert-danger">
-                {{ $message }}
+            {{-- --}}
+            @error('price_after_discount')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
+            <div class="form-group">
+                <label for="price_after_discount" class="form-label">Price After Discount:</label>
+                <input type="number" class="form-control w-50 bg-light" name="price_after_discount"
+                    id="price_after_discount" readonly>
             </div>
-        @enderror
-        <div>
-            <label for="price_after_discount" class="form-label">Price after discount:</label>
-            <input type="number" class="form-control w-50" name="price_after_discount" id="price_after_discount" readonly>
-        </div>
-
+            @error('stock_quantity')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
             <div class="form-group">
                 <label>Stock Quantity</label>
                 <input type="number" name="stock_quantity" class="form-control" required>
@@ -73,16 +78,30 @@
                     @endforeach
                 </select>
             </div>
-
+            @error('brand')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
             <div class="form-group">
                 <label>Brand</label>
                 <input type="text" name="brand" class="form-control">
             </div>
 
-           <div class="form-group">
-                <label>Image</label>
-                <input type="file" name="image" class="form-control">
+            {{-- --}}
+            <label for="exampleInputFile">Product Image</label>
+            @error('image')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
+            <div class="input-group w-50">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="image" id="exampleInputFile">
+                    <label class="custom-file-label" for="exampleInputFile">Upload</label>
+                </div>
             </div>
+            {{-- --}}
 
             <button type="submit" class="btn btn-success">
                 <i class="fas fa-save"></i> Save
@@ -92,24 +111,26 @@
 </div>
 @stop
 @section('js')
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
-            $('#price, #discount').on('input', function () {
-                // Get the values of the input fields
-                var num1 = parseFloat($('#price').val()) || 0;
-                var num2 = parseFloat($('#discount').val()) || 0;
-                if (num1 === 0 && num2 > 0) {
-                    // Display the warning message
-                    $('#warning').show();
+            function calculateDiscount() {
+                let price = parseFloat($('#price').val()) || 0;
+                let discount = parseFloat($('#discount').val()) || 0;
+
+                if (price === 0 && discount > 0) {
+                    $('#warning').removeClass('d-none');
+                    $('#price_after_discount').val('');
                 } else {
-                    // Hide the warning message and calculate the sum
-                    $('#warning').hide();
-                    var result = (num1 * num2) / 100;
-                    $('#discount').val(result);
+                    $('#warning').addClass('d-none');
+                    let finalPrice = price - ((price * discount) / 100);
+                    $('#price_after_discount').val(finalPrice.toFixed(2));
                 }
-            });
+            }
+
+            $('#price, #discount').on('input', calculateDiscount);
+
+
+            calculateDiscount();
         });
     </script>
-
 @endsection
