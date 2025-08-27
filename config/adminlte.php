@@ -319,7 +319,7 @@ return [
     // 🔹 Categories
     [
         'text' => 'Categories',
-        'route' => '',
+        'route' => 'categories.index',
         'icon'  => 'fas fa-folder-open',
         'icon_color' => 'yellow',
     ],

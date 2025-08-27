@@ -17,12 +17,20 @@
     <div class="card-body">
         <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-
+            @error('name')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
             <div class="form-group">
                 <label>Name</label>
                 <input type="text" name="name" class="form-control" required>
             </div>
-
+            @error('description')
+                <div class="alert alert-danger">
+                    {{ $message }}
+                </div>
+            @enderror
             <div class="form-group">
                 <label>Description</label>
                 <textarea name="description" class="form-control"></textarea>

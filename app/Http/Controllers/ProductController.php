@@ -25,8 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::select('id', 'name')->get();
-        return view('Admin.products.create', compact('categories'));
+        return view('Admin.products.create');
     }
 
     /**
