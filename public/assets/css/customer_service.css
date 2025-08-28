@@ -48,7 +48,7 @@ main p {
     margin-bottom: 30px;
 }
 
-.cards {
+.cards_customer_service {
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
     gap: 20px;
@@ -57,7 +57,7 @@ main p {
     padding:100px 0;
 }
 
-.card {
+.card_customer_service {
     background-color: #fff; 
     border-radius: 8px;
     padding: 20px;
@@ -72,11 +72,11 @@ main p {
     transition: box-shadow 0.3s ease;
 }
 
-.card:hover {
+.card_customer_service:hover {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.card img {
+.card_customer_service img {
     width: 50px;
     height: 50px;
     object-fit: contain;
