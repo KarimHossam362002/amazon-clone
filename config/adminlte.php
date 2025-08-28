@@ -299,95 +299,101 @@ return [
     */
 
     'menu' => [
-    // 🔹 Dashboard
-    [
-        'text' => 'Dashboard',
-        'url'  => '/admin',
-        'icon' => 'fas fa-tachometer-alt',
-    ],
+        // 🔹 Dashboard
+        [
+            'text' => 'Dashboard',
+            'url' => '/admin',
+            'icon' => 'fas fa-tachometer-alt',
+        ],
 
-    ['header' => 'Amazon Database'],
+        ['header' => 'Amazon Database'],
+        // 🔹 Home
+        [
+            'text' => 'Home',
+            'route' => 'index', // make sure you have Users resource
+            'icon' => 'fas fa-home',
+            'icon_color' => 'white',
+        ],
+        // 🔹 Users
+        [
+            'text' => 'Users',
+            'route' => '', // make sure you have Users resource
+            'icon' => 'fas fa-users',
+            'icon_color' => 'cyan',
+        ],
 
-    // 🔹 Users
-    [
-        'text' => 'Users',
-        'route' => '', // make sure you have Users resource
-        'icon'  => 'fas fa-users',
-        'icon_color' => 'cyan',
-    ],
+        // 🔹 Categories
+        [
+            'text' => 'Categories',
+            'route' => 'categories.index',
+            'icon' => 'fas fa-folder-open',
+            'icon_color' => 'yellow',
+        ],
 
-    // 🔹 Categories
-    [
-        'text' => 'Categories',
-        'route' => 'categories.index',
-        'icon'  => 'fas fa-folder-open',
-        'icon_color' => 'yellow',
-    ],
+        // 🔹 Products
+        [
+            'text' => 'Products',
+            'route' => 'products.index',
+            'icon' => 'fas fa-box',
+            'icon_color' => 'orange',
+        ],
 
-    // 🔹 Products
-    [
-        'text' => 'Products',
-        'route' => 'products.index',
-        'icon'  => 'fas fa-box',
-        'icon_color' => 'orange',
-    ],
+        // 🔹 Orders
+        [
+            'text' => 'Orders',
+            'route' => '',
+            'icon' => 'fas fa-receipt',
+            'icon_color' => 'blue',
+        ],
 
-    // 🔹 Orders
-    [
-        'text' => 'Orders',
-        'route' => 'orders.index',
-        'icon'  => 'fas fa-receipt',
-        'icon_color' => 'blue',
-    ],
+        // 🔹 Order Items
+        [
+            'text' => 'Order Items',
+            'route' => '',
+            'icon' => 'fas fa-list',
+            'icon_color' => 'red',
+        ],
 
-    // 🔹 Order Items
-    [
-        'text' => 'Order Items',
-        'route' => '',
-        'icon'  => 'fas fa-list',
-        'icon_color' => 'red',
-    ],
+        // 🔹 Carts
+        [
+            'text' => 'Carts',
+            'route' => '',
+            'icon' => 'fas fa-shopping-cart',
+            'icon_color' => 'green',
+        ],
 
-    // 🔹 Carts
-    [
-        'text' => 'Carts',
-        'route' => '',
-        'icon'  => 'fas fa-shopping-cart',
-        'icon_color' => 'green',
-    ],
+        // 🔹 Cart Items
+        [
+            'text' => 'Cart Items',
+            'route' => '',
+            'icon' => 'fas fa-clipboard-list',
+            'icon_color' => 'purple',
+        ],
 
-    // 🔹 Cart Items
-    [
-        'text' => 'Cart Items',
-        'route' => '',
-        'icon'  => 'fas fa-clipboard-list',
-        'icon_color' => 'purple',
-    ],
+        // 🔹 Reviews
+        [
+            'text' => 'Reviews',
+            'route' => '',
+            'icon' => 'fas fa-comment-dots',
+            'icon_color' => 'teal',
+        ],
 
-    // 🔹 Reviews
-    [
-        'text' => 'Reviews',
-        'route' => '',
-        'icon'  => 'fas fa-comment-dots',
-        'icon_color' => 'teal',
-    ],
+        // 🔹 Payments
+        [
+            'text' => 'Payments',
+            'route' => '',
+            'icon' => 'fas fa-credit-card',
+            'icon_color' => 'cyan',
+        ],
 
-    // 🔹 Payments
-    [
-        'text' => 'Payments',
-        'route' => '',
-        'icon'  => 'fas fa-credit-card',
-        'icon_color' => 'cyan',
+        // 🔹 Shipments
+        [
+            'text' => 'Shipments',
+            'route' => '',
+            'icon' => 'fas fa-truck',
+            'icon_color' => 'yellow',
+        ],
     ],
-
-    // 🔹 Shipments
-    [
-        'text' => 'Shipments',
-        'route' => '',
-        'icon'  => 'fas fa-truck',
-        'icon_color' => 'yellow',
-    ],
-],
 
     /*
     |--------------------------------------------------------------------------

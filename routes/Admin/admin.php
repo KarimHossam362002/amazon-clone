@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminIndexController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\CategoryController;
@@ -11,9 +12,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShipmentController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/admin', function () {
-    return view(view: 'Admin.index');
-});
+Route::get('/admin', [AdminIndexController::class, 'index'])->name('admin.index');
 
 Route::resources([
     'admin/categories' => CategoryController::class,

@@ -1,0 +1,310 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+.body {
+  font-family: Arial, sans-serif;
+  background-color: #e3e6e6;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+
+/* Header */
+.amazon-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #131921;
+  color: white;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 35px;
+  margin-right: 10px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.deliver {
+  margin-left: 10px;
+}
+
+.header-center {
+  display: flex;
+  flex: 1;
+  max-width: 600px;
+  margin: 10px;
+}
+
+.category {
+  padding: 5px;
+}
+
+.search-input {
+  flex: 1;
+  padding: 5px;
+}
+
+.search-btn {
+  background: #febd69;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.header-right {
+  display: flex;
+  gap: 20px;
+  text-align: right;
+  font-size: 12px;
+}
+
+/* Sub Navigation Bar */
+.subnav {
+  background-color: #232f3e;
+  padding: 10px 20px;
+}
+
+.subnav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  flex-wrap: wrap;
+  color: white;
+  font-size: 14px;
+  align-items: center;
+}
+
+.subnav li {
+  cursor: pointer;
+}
+.subnav a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-icon {
+  margin-right: 5px;
+}
+
+/* Slider */
+/* Slider Styles */
+.slider-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slider img {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* Navigation Buttons */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
+
+@media (max-width: 768px) {
+  .slider img {
+    height: 200px;
+  }
+}
+
+.card-row-container {
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  background-color: #f5f5f5;
+  flex-wrap: nowrap;
+  margin : 70px 0;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.card-full {
+  flex: 2;
+}
+
+.card-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.grid-images {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.image-box img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.image-box span {
+  display: block;
+  text-align: center;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.link {
+  display: block;
+  margin-top: 16px;
+  font-size: 13px;
+  text-align: left;
+  color: #007bff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+/* Responsive */
+@media (max-width: 992px) {
+  .card {
+    width: 48%;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+}
+
+/* Footer */
+.amazon-footer {
+  background-color: #232f3e;
+  color: white;
+  padding: 20px 10px;
+}
+
+.footer-top {
+  text-align: center;
+  padding: 10px;
+  background-color: #37475a;
+  cursor: pointer;
+}
+.footer_anchor {
+  color: white;
+  text-decoration: none;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .amazon-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-center {
+    width: 100%;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+  .recommendation-section {
+    text-align: center;
+    background-color:white;
+    padding : 100px 0;
+  }
+
+  .recommendation-section p {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .sign-in-button {
+    background-color: #ffd206; /* Similar yellow shade */
+    color: black;
+    padding: 8px 100px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .sign-in-button:hover {
+    background-color: #e6c600; /* Slightly darker on hover */
+  }
+
+  .new-customer {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  .start-here {
+    color: #0066cc; /* Link color */
+    cursor: pointer;
+    text-decoration: underline;
+  }

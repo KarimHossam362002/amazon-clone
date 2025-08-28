@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+}
+
+.product_a{
+    text-decoration: none;
+    color: #007185;
+}
+a:hover{
+    text-decoration: underline;
+}
+.container {
+  padding: 20px;
+  max-width: 1000px;
+}
+.product {
+    display: flex;
+    margin-top: 30px;
+}
+.img{
+    flex: 1;
+    margin-left: 20px;
+    height: 500px;
+    margin-top: 100px;
+    margin-right: 60px;
+}
+.price {
+    font-size: 18px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+.old-price{
+    padding-top: 2px;
+    padding-bottom: 7px;
+    color: gray;
+    margin-right: 10px;
+}
+.free-returns {
+  color: #007185;
+  font-weight: bold;
+  font-size: 20px;
+}
+.redeem{
+    color: gray;
+    font-size: 15px;
+}
+.dis{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(39, 38, 38);
+}
+.green-box {
+  background-color: rgb(3, 172, 3);
+  color: black;
+  font-weight: bold;
+  padding: 2px 6px;
+  margin: 0 4px;
+  display: inline-block;
+  font-size: 15px;
+}
+table{
+    width: 500px;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.td1{
+    font-weight: bold;
+}
+.report{
+    margin-top: 8px;
+}
+.report i {
+    margin-right: 10px;
+}
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+.icon-box {
+  width: 110px;
+  text-align: center;
+  font-size: 14px;
+  color: #007185;
+}
+li{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+.product-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 20px;
+}
+.product-image img {
+  width: 300px;
+  object-fit: contain;
+}
+.buy-box {
+  display: inline;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px #eee;
+  font-size: 17px;
+  height: 610px;
+  width: 300px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.buy-box p {
+  margin: 10px 0px;
+}
+.buy-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+}
+.in-stock {
+  color: green;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+.add-to-cart {
+  background-color: #ffd814;
+}
+.buy-now {
+  background-color: #f08804;
+  color: white;
+}
+.buy-box button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 100px;
+}
