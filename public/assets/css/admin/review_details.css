@@ -1,0 +1,27 @@
+.review-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.details-left, .details-center, .details-right {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.details-left h4, .details-center h4, .details-right h4 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+.product-img {
+    max-width: 150px;
+    border-radius: 8px;
+    margin-top: 10px;
+}

@@ -3,11 +3,11 @@
 @section('title', 'Dashboard')
 
 @section("css")
-<link rel="stylesheet" href="{{ asset('assets/css/admin/user_profile.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/admin/user_profile.css') }}">
 @endsection
 
 @section('content_header')
-    <h1 class="text-primary"><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h1>
+<h1 class="text-primary"><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h1>
 @stop
 
 @section('content')
@@ -17,13 +17,13 @@
     <div class="col-lg-3 col-6">
         <div class="small-box bg-info">
             <div class="inner">
-                <h3>Users</h3>
+                <h3>Users : {{$userCount}}</h3>
                 <p>Total Users</p>
             </div>
             <div class="icon">
                 <i class="fas fa-users"></i>
             </div>
-            <a href="#" class="small-box-footer">
+            <a href="{{ route("users.index") }}" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>
@@ -45,7 +45,7 @@
         </div>
     </div>
 
-      {{-- Total Categories --}}
+    {{-- Total Categories --}}
     <div class="col-lg-3 col-6">
         <div class="small-box bg-red">
             <div class="inner">

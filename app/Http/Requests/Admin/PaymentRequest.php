@@ -25,6 +25,7 @@ class PaymentRequest extends FormRequest
             'order_id' => 'required|exists:orders,order_id|unique:payments,id',
             'payment_method' => 'required|in:Credit Card,PayPal,Bank Transfer,Cash',
             'amount' => 'required|numeric|min:0',
+            'payment_date' => 'nullable|date',
             'payment_status' => 'required|in:Pending,Completed,Failed',
         ];
     }

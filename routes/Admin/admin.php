@@ -16,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/admin', [AdminIndexController::class, 'index'])->name('admin.index');
 
-    Route::resource('users', UserController::class)->only(['index', 'show', 'update']);
+    Route::resource('admin/users', UserController::class)->only(['index', 'show', 'update']);
+    Route::resource('admin/reviews', ReviewController::class)->only(['index', 'show']);
 
     Route::resources([
         'admin/categories' => CategoryController::class,
         'admin/products' => ProductController::class,
-        'admin/reviews' => ReviewController::class,
+        // 'admin/reviews' => ReviewController::class,
         'admin/payments' => PaymentController::class,
         'admin/shipments' => ShipmentController::class,
         'admin/orders' => OrderController::class,

@@ -1,7 +1,7 @@
 {{-- <td class="d-flex"> --}}
     @extends('adminlte::page')
     @section('content')
-
+        <h2>Products</h2>
         @if (session()->has('success'))
             <div class="alert alert-success">{{ session()->get('success') }}</div>
         @endif
@@ -11,7 +11,7 @@
                 {{ session()->get('updated') }}
             </div>
         @endif
-        <a href="{{ route('products.create') }}" class="btn btn-primary"><i class="fas fa-plus-square"></i>
+        <a href="{{ route('products.create') }}" class="btn btn-success mb-3">Add Product
         </a>
 
         <table class="table">

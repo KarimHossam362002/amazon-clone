@@ -1,7 +1,7 @@
 {{-- <td class="d-flex"> --}}
     @extends('adminlte::page')
     @section('content')
-
+        <h2>Categories</h2>
         @if (session()->has('success'))
             <div class="alert alert-success">{{ session()->get('success') }}</div>
         @endif
@@ -11,7 +11,7 @@
                 {{ session()->get('updated') }}
             </div>
         @endif
-        <a href="{{ route('categories.create') }}" class="btn btn-primary"><i class="fas fa-plus-square"></i>
+        <a href="{{ route('categories.create') }}" class="btn btn-success mb-3">Add Category</i>
         </a>
 
         <table class="table">
@@ -19,9 +19,7 @@
                 <th>id</th>
                 <th>Category name</th>
                 {{-- <th>Description</th> --}}
-                <th>Delete</th>
-                <th>Update</th>
-                <th>Show</th>
+                <th>Actions</th>
             </thead>
             <tbody>
                 <tr>
@@ -29,19 +27,19 @@
                             <td>{{ $category->id }}</td>
                             <td>{{ $category->name }}</td>
                             {{-- <td>{{ $category->description }}</td> --}}
-                            <td class="d-flex">
-                                <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
-                                    @method('DELETE')
+                            <td>
+                                <form action="{{ route('categories.destroy', $category->id) }}" method="POST"
+                                    style="display:inline;">
                                     @csrf
-                                    <button class="delete-category btn btn-danger" type="submit"><i
-                                            class="fas fa-minus-circle"></i></button>
+                                    @method('DELETE')
+                                    <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"> <i
+                                            class="fas fa-minus-circle"></i> </button>
                                 </form>
-
+                                <a href="{{ route('categories.show', $category->id) }}" class="btn btn-info btn-sm"><i
+                                        class="fas fa-clipboard-list"></i></a>
+                                <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary btn-sm"><i
+                                        class="fas fa-edit"></i></a>
                             </td>
-                            <td><a href="{{ route('categories.edit', $category->id) }}" class="btn btn-warning"><i
-                                        class="fas fa-edit"></i></a></td>
-                            <td><a href="{{ route('categories.show', $category->id) }}" class="btn btn-primary"><i
-                                        class="fas fa-clipboard-list"></i></a></td>
                         </tr>
                     @endforeach
 

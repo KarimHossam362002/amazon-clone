@@ -1,6 +1,7 @@
 <?php
 // Front Routes
 use App\Http\Controllers\Front\ProfileController;
+use App\Http\Controllers\ReviewController;
 
 //-- 1- Product ---
 Route::get('/product', function () {

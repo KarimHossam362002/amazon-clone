@@ -12,7 +12,13 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::select("id", "user_id", "product_id", "rating", "comment", "created_at")
+            ->with([
+                "user:id,name,email",
+                "product:id,name,price,image"
+            ])
+            ->paginate(5);
+        return view('Admin.reviews.index', compact('reviews'));
     }
 
     /**
@@ -36,9 +42,8 @@ class ReviewController extends Controller
      */
     public function show(Review $review)
     {
-        //
+        return view('Admin.reviews.show', compact('review'));
     }
-
     /**
      * Show the form for editing the specified resource.
      */

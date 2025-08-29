@@ -346,28 +346,12 @@ return [
             'icon_color' => 'blue',
         ],
 
-        // 🔹 Order Items
-        [
-            'text' => 'Order Items',
-            'route' => '',
-            'icon' => 'fas fa-list',
-            'icon_color' => 'red',
-        ],
-
         // 🔹 Carts
         [
             'text' => 'Carts',
             'route' => '',
             'icon' => 'fas fa-shopping-cart',
             'icon_color' => 'green',
-        ],
-
-        // 🔹 Cart Items
-        [
-            'text' => 'Cart Items',
-            'route' => '',
-            'icon' => 'fas fa-clipboard-list',
-            'icon_color' => 'purple',
         ],
 
         // 🔹 Reviews
@@ -381,7 +365,7 @@ return [
         // 🔹 Payments
         [
             'text' => 'Payments',
-            'route' => '',
+            'route' => 'payments.index',
             'icon' => 'fas fa-credit-card',
             'icon_color' => 'cyan',
         ],
