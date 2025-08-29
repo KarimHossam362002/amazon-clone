@@ -2,6 +2,10 @@
 
 @section('title', 'Dashboard')
 
+@section("css")
+<link rel="stylesheet" href="{{ asset('assets/css/admin/user_profile.css') }}">
+@endsection
+
 @section('content_header')
     <h1 class="text-primary"><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h1>
 @stop

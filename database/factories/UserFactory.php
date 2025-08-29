@@ -13,23 +13,26 @@ use Illuminate\Support\Str;
 class UserFactory extends Factory
 {
     /**
-     * The current password being used by the factory.
+     * The model the factory corresponds to.
      */
-    protected static ?string $password;
+    protected $model = User::class;
 
     /**
      * Define the model's default state.
      *
      * @return array<string, mixed>
      */
-     protected $model = User::class;
     public function definition(): array
     {
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => Hash::make('password'), 
+            'password' => Hash::make('password'), // Default password
+            'phone_number' => $this->faker->phoneNumber(),
+            'shipping_address' => $this->faker->address(),
+            'billing_address' => $this->faker->address(),
+            'role' => $this->faker->randomElement(['user', 'admin']),
             'image' => $this->faker->imageUrl(200, 200, 'people', true),
             'remember_token' => Str::random(10),
         ];
@@ -40,7 +43,7 @@ class UserFactory extends Factory
      */
     public function unverified(): static
     {
-        return $this->state(fn (array $attributes) => [
+        return $this->state(fn(array $attributes) => [
             'email_verified_at' => null,
         ]);
     }

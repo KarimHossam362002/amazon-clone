@@ -18,8 +18,22 @@
   </div>
   <div class="header-right">
     <div class="account">
-      Hello, sign in<br /><strong>Account & Lists</strong>
+      @auth
+        Hello, {{ Auth::user()->name }} <br>
+        <strong>
+          <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+            @csrf
+            <button type="submit" style="background:none;border:none;color:#0066c0;cursor:pointer;">
+              Logout
+            </button>
+          </form>
+        </strong>
+      @else
+        Accounts & Lists<br>
+        <strong><a href="{{ route('login') }}" style="color:#0066c0;">Hello, Sign in</a></strong>
+      @endauth
     </div>
+
     <div class="orders">Returns<br /><strong>& Orders</strong></div>
     <div class="cart">🛒 Cart</div>
   </div>
@@ -29,19 +43,33 @@
 
 <nav class="subnav">
   <ul>
-    <li><span class="menu-icon">☰</span> All</li>
-    <li>Today's Deals</li>
-    <li>Registry</li>
-    <li>Prime Video</li>
-    <li>Gift Cards</li>
+    @auth
+      @if(Auth::user()->role === 'admin' || Auth::user()->role === 'user')
+        <a href="{{ route("profile.edit") }}">
+          <li>Profile</li>
+        </a>
+      @endif
+    @endauth
+
     <a href="{{ route("customer_service") }}">
       <li>Customer Service</li>
     </a>
-    <li>Sell</li>
-    <a href="{{ route("admin.index") }}">
-      <li>Admin</li>
-    </a>
+    @auth
+      @if(Auth::user()->role === 'admin')
+        <a href="{{ route('admin.index') }}">
+          <li>Admin</li>
+        </a>
+      @endif
+    @endauth
   </ul>
 </nav>
+
+<!-- Flash Messages -->
+@if(session('error'))
+  <div id="flash-message" style="background:#ffcccc;color:#900;padding:10px;margin:10px auto;
+                    width:100%;max-width:100%;text-align:center;border-radius:6px;">
+    {{ session('error') }}
+  </div>
+@endif
 
 <!-- end sub nav bar -->

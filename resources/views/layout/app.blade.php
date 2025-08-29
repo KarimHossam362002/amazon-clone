@@ -7,11 +7,10 @@
     <title>@yield('title', 'Amazon')</title>
     <link rel="icon" href="{{asset("assets/img/logos/Amazon-icon.png")}}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="{{asset("assets/css/carsoul_style.css")}}" />
     <link rel="stylesheet" href="{{asset("assets/css/footer_style.css")}}" />
     <link rel="stylesheet" href="{{asset("assets/css/style.css")}}" />
-    <link rel="stylesheet" href="{{asset("assets/css/product_style.css")}}">
-    <link rel="stylesheet" href="{{asset("assets/css/customer_service.css")}}" />
+
+    @yield('styles')
 </head>
 
 <body class="body">
@@ -28,6 +27,17 @@
 
     <script src="{{asset("assets/js/carsoul.js")}}"></script>
     <script src="{{asset("assets/js/script.js")}}"></script>
+    <script>
+        // Auto-hide flash message after 5 seconds
+        setTimeout(() => {
+            const flash = document.getElementById('flash-message');
+            if (flash) {
+                flash.style.transition = "opacity 0.5s ease";
+                flash.style.opacity = "0";
+                setTimeout(() => flash.remove(), 100); // remove from DOM after fade
+            }
+        }, 5000);
+    </script>
 </body>
 
 </html>

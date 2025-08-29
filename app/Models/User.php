@@ -20,7 +20,8 @@ class User extends Authenticatable
         'phone_number',
         'shipping_address',
         'billing_address',
-        'is_admin',
+        'role',
+        'image',
     ];
 
     protected $hidden = [
@@ -45,7 +46,7 @@ class User extends Authenticatable
         return $this->hasOne(Cart::class, 'user_id', 'id');
     }
 
-   
+
     public function reviews()
     {
         return $this->hasMany(Review::class, 'user_id', 'id');

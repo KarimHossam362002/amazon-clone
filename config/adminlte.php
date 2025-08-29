@@ -317,7 +317,7 @@ return [
         // 🔹 Users
         [
             'text' => 'Users',
-            'route' => '', // make sure you have Users resource
+            'route' => 'users.index', // make sure you have Users resource
             'icon' => 'fas fa-users',
             'icon_color' => 'cyan',
         ],
@@ -373,7 +373,7 @@ return [
         // 🔹 Reviews
         [
             'text' => 'Reviews',
-            'route' => '',
+            'route' => 'reviews.index',
             'icon' => 'fas fa-comment-dots',
             'icon_color' => 'teal',
         ],
