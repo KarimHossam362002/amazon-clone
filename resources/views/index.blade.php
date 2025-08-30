@@ -2,6 +2,8 @@
 @section('title', 'Amazon.com Spend less. Smile more.')
 @section('styles')
   <link rel="stylesheet" href="{{asset("assets/css/carsoul_style.css")}}" />
+  {{--
+  <link rel="stylesheet" href="{{ asset('assets/css/libs/animate.css') }}"> --}}
 @endsection
 @section('content')
   <main>
@@ -23,7 +25,7 @@
 
     <!-- Start Card section 1 -->
     <section class="card-row-container">
-      <div class="card card-full">
+      <div class="card card-full wow fadeInDown">
         <h2>Get your game on</h2>
         <img src="{{asset("assets/img/Card1_image.jpg")}}" alt="Gaming setup" />
         <a href="#" class="link">Shop gaming</a>
@@ -1347,8 +1349,8 @@
 
     <div class="recommendation-section">
       <p>See personalized recommendations</p>
-      <button class="sign-in-button">Sign in</button>
-      <span class="new-customer">New customer? <a class="start-here" href="#">Start here.</a></span>
+      <a href="{{ route("login") }}"> <button class="sign-in-button">Sign in</button></a>
+      <span class="new-customer">New customer? <a class="start-here" href="{{ route("signup") }}">Start here.</a></span>
     </div>
   </main>
 @endsection

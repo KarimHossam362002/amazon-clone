@@ -13,7 +13,7 @@ class ShipmentSeeder extends Seeder
      */
     public function run(): void
     {
-        Shipment::factory(50)
+        Shipment::factory(80)
         ->create();
     }
 }
