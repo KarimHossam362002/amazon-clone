@@ -5,7 +5,12 @@
     <img src="https://i.ibb.co/S47h4N8B/Amazon-icon.png" alt="Amazon-icon" border="0" width="200" />
   </a>
 </p>
-
+**ERD**
+<p align="center">
+  <a href="https://imgbb.com/">
+    <img src="https://i.ibb.co/8DPLD5Cb/ERD.png" alt="ERD" border="0" width="200">
+  </a>
+</p>
 
 ## Overview
 This project is an **E-commerce platform** built using **Laravel**, featuring an **Admin Dashboard** and an intuitive **User Experience** for managing products, orders, and more. It includes features for **product management**, **order tracking**, **cart management**, **payment integration**, and **shipment tracking**.
