@@ -5,8 +5,6 @@
     <img src="https://i.ibb.co/S47h4N8B/Amazon-icon.png" alt="Amazon-icon" border="0" width="200" />
   </a>
 </p>
-**ERD**
-<a href="https://ibb.co/tMYTMsGz"><img src="https://i.ibb.co/tMYTMsGz/ERD.png" alt="ERD" border="0"></a>
 
 ## Overview
 This project is an **E-commerce platform** built using **Laravel**, featuring an **Admin Dashboard** and an intuitive **User Experience** for managing products, orders, and more. It includes features for **product management**, **order tracking**, **cart management**, **payment integration**, and **shipment tracking**.
@@ -168,3 +166,9 @@ Feel free to fork, clone, or contribute to this project! ✨
 ![Laravel](https://img.shields.io/badge/Laravel-9.x-orange)
 ![PHP](https://img.shields.io/badge/PHP-%3E%3D%208.1-blue)
 ![MySQL](https://img.shields.io/badge/MySQL-8.x-blue)
+
+
+# 🚀 **ERD (Entity Relationship Diagram)**
+<p align="center">
+<a href="https://ibb.co/tMYTMsGz"><img src="https://i.ibb.co/tMYTMsGz/ERD.png" alt="ERD" border="0"></a>
+</p>
