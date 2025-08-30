@@ -35,7 +35,7 @@
                                 <form action="{{ route('cart.update', $item->id) }}" method="POST">
                                     @csrf
                                     <input type="number" name="quantity" value="{{ $item->quantity }}" min="1">
-                                    <button type="submit">Update</button>
+                                    <button class="btn" type="submit">Update</button>
                                 </form>
                             </td>
                             <td>${{ number_format($item->product->price * $item->quantity, 2) }}</td>
@@ -43,7 +43,7 @@
                                 <form action="{{ route('cart.remove', $item->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit">Remove</button>
+                                    <button type="submit" class="btn">Remove</button>
                                 </form>
                             </td>
                         </tr>
