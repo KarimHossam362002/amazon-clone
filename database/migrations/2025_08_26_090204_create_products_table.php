@@ -23,7 +23,9 @@ return new class extends Migration
             $table->string('brand', 100);
             $table->decimal('rating_avg', 2, 1)->nullable();
             $table->string('image');
-            $table->foreignId('category_id')->nullable()->constrained('categories')
+            $table->foreignId('category_id')
+            ->nullable()
+            ->constrained('categories')
             ->onUpdate('cascade')
             ->onDelete('cascade');
             $table->timestamps();
