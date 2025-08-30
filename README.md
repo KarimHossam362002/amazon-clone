@@ -8,7 +8,7 @@
 **ERD**
 <p align="center">
   <a href="https://imgbb.com/">
-    <a href="https://ibb.co/tMYTMsGz"><img src="https://i.ibb.co/8DPLD5Cb/ERD.png" alt="ERD" border="0" width ="300"></a>
+  <img src="https://i.ibb.co/8DPLD5Cb/ERD.png" alt="ERD" border="0" width ="300">
   </a>
 </p>
 
