@@ -1,7 +1,7 @@
 # 🚀 **E-Commerce Laravel Dashboard - Admin & User**
 
 <p align="center">
-<a href="https://ibb.co/KpSM1c2J"><img src="https://i.ibb.co/C3Dkrpbf/Amazon-logo-meaning.jpg" alt="Amazon-logo-meaning" border="0" /></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/S47h4N8B/Amazon-icon.png" alt="Amazon-icon" border="0"></a>
 </p>
 
 ## Overview
