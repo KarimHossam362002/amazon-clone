@@ -1,4 +1,4 @@
-# 🚀 **E-Commerce Laravel Dashboard - Admin & User**
+# 🚀 **E-Commerce Amazon clone Website**
 
 <p align="center">
   <a href="https://imgbb.com/">
