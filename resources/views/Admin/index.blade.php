@@ -15,10 +15,10 @@
 
     {{-- Total Users --}}
     <div class="col-lg-3 col-6">
-        <div class="small-box bg-info">
+        <div class="small-box  bg-primary text-white shadow-sm">
             <div class="inner">
-                <h3>Users : {{$userCount}}</h3>
-                <p>Total Users</p>
+                <h3>Users</h3>
+                <p>Total Users : {{$userCount}}</p>
             </div>
             <div class="icon">
                 <i class="fas fa-users"></i>
@@ -28,13 +28,28 @@
             </a>
         </div>
     </div>
+    {{-- Total Categories --}}
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-warning text-dark shadow-sm">
+            <div class="inner">
+                <h3>Categories </h3>
+                <p>Total Categories : {{ $categoryCount }}</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-folder-open"></i>
+            </div>
+            <a href="{{ route('categories.index') }}" class="small-box-footer">
+                Manage Categories <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
 
     {{-- Total Products --}}
     <div class="col-lg-3 col-6">
-        <div class="small-box bg-success">
+        <div class="small-box bg-info text-white shadow-sm">
             <div class="inner">
-                <h3>Products : {{ $productCount }} </h3>
-                <p>Total Products</p>
+                <h3>Products </h3>
+                <p>Total Products : {{$productCount}}</p>
             </div>
             <div class="icon">
                 <i class="fas fa-box"></i>
@@ -45,18 +60,49 @@
         </div>
     </div>
 
-    {{-- Total Categories --}}
+
+    {{-- Total Reviews --}}
     <div class="col-lg-3 col-6">
-        <div class="small-box bg-red">
+        <div class="small-box bg-secondary text-white shadow-sm">
             <div class="inner">
-                <h3>Categories : {{ $categoryCount }} </h3>
-                <p>Total Categories</p>
+                <h3>Reviews </h3>
+                <p>Total Reviews : {{ $reviewCount }}</p>
             </div>
             <div class="icon">
-                <i class="fas fa-box"></i>
+                <i class="fas fa-comment-dots"></i>
             </div>
-            <a href="{{ route('categories.index') }}" class="small-box-footer">
-                Manage Categories <i class="fas fa-arrow-circle-right"></i>
+            <a href="{{ route('reviews.index') }}" class="small-box-footer">
+                Manage Reviews <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+    {{-- Total Payments --}}
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-green text-white shadow-sm">
+            <div class="inner">
+                <h3>Payments </h3>
+                <p>Total Payments : {{ $paymentCount }}</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-credit-card"></i>
+            </div>
+            <a href="{{ route('payments.index') }}" class="small-box-footer">
+                Manage Payments <i class="fas fa-arrow-circle-right"></i>
+            </a>
+        </div>
+    </div>
+    {{-- Total Shipments --}}
+    <div class="col-lg-3 col-6">
+        <div class="small-box  bg-dark text-white shadow-sm">
+            <div class="inner">
+                <h3>Shipments </h3>
+                <p>Total Shipments : {{ $shipmentCount }}</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-truck"></i>
+            </div>
+            <a href="{{ route('shipments.index') }}" class="small-box-footer">
+                Manage Shipments <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>
     </div>
@@ -73,4 +119,5 @@
         <p>Use the sidebar to navigate through different sections of your admin panel.</p>
     </div>
 </div>
+
 @stop

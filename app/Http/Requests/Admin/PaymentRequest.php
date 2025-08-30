@@ -22,7 +22,7 @@ class PaymentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'order_id' => 'required|exists:orders,order_id|unique:payments,id',
+            'order_id' => 'required|exists:orders,id',
             'payment_method' => 'required|in:Credit Card,PayPal,Bank Transfer,Cash',
             'amount' => 'required|numeric|min:0',
             'payment_date' => 'nullable|date',

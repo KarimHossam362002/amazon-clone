@@ -14,10 +14,18 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
          User::factory()->create([
-        'name' => 'Admin User',
-        'email' => 'admin@example.com',
+        'name' => 'Admin',
+        'email' => 'admin@gmail.com',
         'password' => bcrypt('admin123'),
+        'role' => "admin",
         'image' => 'https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff',
+    ]);
+         User::factory()->create([
+        'name' => 'User',
+        'email' => 'user@gmail.com',
+        'password' => bcrypt('user123'),
+        'role' => 'user',
+        'image' => 'https://ui-avatars.com/api/?name=User&background=0D8ABC&color=fff',
     ]);
 
 
@@ -26,8 +34,10 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ProductSeeder::class,
             ReviewSeeder::class,
-            PaymentSeeder::class,
+            OrderSeeder::class,
             ShipmentSeeder::class,
+            CartSeeder::class,
+            PaymentSeeder::class,
         ]);
     }
 }

@@ -12,7 +12,9 @@ class Shipment extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = ['order_id', 'shipment_date', 'status'];
-
+    protected $casts = [
+        'shipment_date' => 'datetime',
+    ];
     public function order()
     {
         return $this->belongsTo(Order::class, 'order_id', 'id');

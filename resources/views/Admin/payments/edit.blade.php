@@ -3,36 +3,76 @@
 @section('title', 'Edit Payment')
 
 @section('content')
-<div class="admin-container">
-    <h2>Edit Payment</h2>
+    <div class="admin-container">
+        <h1>Edit Payment #{{ $payment->id }}</h1>
 
-    <form action="{{ route('payments.update', $payment->id) }}" method="POST">
-        @csrf
-        @method('PUT')
+        <form action="{{ route('payments.update', $payment) }}" method="POST">
+            @csrf
+            @method('PUT')
 
-        <label>Payment Method</label>
-        <select name="payment_method" class="form-control" required>
-            <option value="Credit Card" {{ $payment->payment_method == 'Credit Card' ? 'selected' : '' }}>Credit Card</option>
-            <option value="PayPal" {{ $payment->payment_method == 'PayPal' ? 'selected' : '' }}>PayPal</option>
-            <option value="Bank Transfer" {{ $payment->payment_method == 'Bank Transfer' ? 'selected' : '' }}>Bank Transfer</option>
-            <option value="Cash" {{ $payment->payment_method == 'Cash' ? 'selected' : '' }}>Cash</option>
-        </select>
+            <div class="form-group mb-3">
+                <label for="order_id">Order</label>
+                <select name="order_id" id="order_id" class="form-control">
+                    <option value="">-- Select Order --</option>
+                    @foreach($orders as $order)
+                        <option value="{{ $order->id }}" {{ $payment->order_id == $order->id ? 'selected' : '' }}>
+                            #{{ $order->id }} - {{ $order->user->name ?? 'Unknown' }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('order_id')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <label>Amount</label>
-        <input type="number" name="amount" step="0.01" class="form-control" value="{{ $payment->amount }}" required>
+        
 
-        <label>Payment Date</label>
-        <input type="datetime-local" name="payment_date" class="form-control" value="{{ \Carbon\Carbon::parse($payment->payment_date)->format('Y-m-d\TH:i') }}">
+            <div class="form-group mb-3">
+                <label for="payment_method">Payment Method</label>
+                <select name="payment_method" id="payment_method" class="form-control">
+                    @foreach(['Credit Card', 'PayPal', 'Bank Transfer', 'Cash'] as $method)
+                        <option value="{{ $method }}" {{ $payment->payment_method == $method ? 'selected' : '' }}>{{ $method }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('payment_method')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <label>Status</label>
-        <select name="payment_status" class="form-control">
-            <option value="Pending" {{ $payment->payment_status == 'Pending' ? 'selected' : '' }}>Pending</option>
-            <option value="Completed" {{ $payment->payment_status == 'Completed' ? 'selected' : '' }}>Completed</option>
-            <option value="Failed" {{ $payment->payment_status == 'Failed' ? 'selected' : '' }}>Failed</option>
-        </select>
+            <div class="form-group mb-3">
+                <label for="amount">Amount</label>
+                <input type="number" step="0.01" name="amount" id="amount" value="{{ $payment->amount }}"
+                    class="form-control">
+                @error('amount')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
 
-        <button type="submit" class="btn btn-primary mt-3">Update</button>
-        <a href="{{ route('payments.index') }}" class="btn btn-secondary mt-3">Cancel</a>
-    </form>
-</div>
+            <div class="form-group mb-3">
+                <label for="payment_status">Status</label>
+                <select name="payment_status" id="payment_status" class="form-control">
+                    @foreach(['Pending', 'Completed', 'Failed'] as $status)
+                        <option value="{{ $status }}" {{ $payment->payment_status == $status ? 'selected' : '' }}>{{ $status }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('payment_status')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="payment_date">Payment Date</label>
+                <input type="datetime-local" name="payment_date" id="payment_date"
+                    value="{{ \Carbon\Carbon::parse($payment->payment_date)->format('Y-m-d\TH:i') }}" class="form-control">
+                @error('payment_date')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+
+            <button type="submit" class="btn btn-success">Update Payment</button>
+            <a href="{{ route('payments.index') }}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
 @endsection

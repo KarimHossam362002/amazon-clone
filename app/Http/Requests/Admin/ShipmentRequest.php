@@ -22,9 +22,9 @@ class ShipmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'order_id' => 'required|exists:orders,order_id|unique:shipments,id',
-            'shipment_date' => 'nullable|date',
             'status' => 'required|in:Pending,In Transit,Delivered,Returned',
+            'shipment_date' => 'nullable|date',
+
         ];
     }
 }

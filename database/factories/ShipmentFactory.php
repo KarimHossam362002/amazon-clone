@@ -20,9 +20,9 @@ class ShipmentFactory extends Factory
     public function definition(): array
     {
         return [
-           
+            'order_id' => Order::inRandomOrder()->first()?->id,
             'shipment_date' => $this->faker->dateTimeBetween('-1 month', 'now'),
-            'status' => $this->faker->randomElement(['Pending','In Transit','Delivered','Returned']),
+            'status' => $this->faker->randomElement(['Pending', 'In Transit', 'Delivered', 'Returned']),
         ];
     }
 }

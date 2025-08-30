@@ -2,30 +2,32 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminIndexController;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\OrderItemController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShipmentController;
 use Illuminate\Support\Facades\Route;
 
-Route::middleware(['auth', 'isAdmin'])->group(function () {
-    Route::get('/admin', [AdminIndexController::class, 'index'])->name('admin.index');
+Route::middleware(['auth', 'isAdmin'])->prefix("admin")->group(function () {
+    Route::get('/', [AdminIndexController::class, 'index'])->name('admin.index');
+    // Users
+    Route::resource('users', UserController::class)->only(['index', 'show', 'update']);
 
-    Route::resource('admin/users', UserController::class)->only(['index', 'show', 'update']);
-    Route::resource('admin/reviews', ReviewController::class)->only(['index', 'show']);
+    // Reviews
+    Route::resource('reviews', ReviewController::class)->only(['index', 'show']);
+
+    // Shipments
+    Route::get('shipments', [ShipmentController::class, 'index'])->name('shipments.index');
+    Route::get('shipments/{shipment}/edit', [ShipmentController::class, 'edit'])->name('shipments.edit');
+    Route::put('shipments/{shipment}', [ShipmentController::class, 'update'])->name('shipments.update');
+    
 
     Route::resources([
-        'admin/categories' => CategoryController::class,
-        'admin/products' => ProductController::class,
-        // 'admin/reviews' => ReviewController::class,
-        'admin/payments' => PaymentController::class,
-        'admin/shipments' => ShipmentController::class,
-        'admin/orders' => OrderController::class,
+        'categories' => CategoryController::class,
+        'products' => ProductController::class,
+        'payments' => PaymentController::class,
+        
     ]);
 });
 

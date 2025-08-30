@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('shipments', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('order_id')->unique()->nullable();
+            $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
             $table->dateTime('shipment_date')->nullable();
             $table->enum('status', ['Pending', 'In Transit', 'Delivered', 'Returned'])->default('Pending');
             $table->timestamps();

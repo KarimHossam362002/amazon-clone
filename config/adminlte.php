@@ -338,21 +338,21 @@ return [
             'icon_color' => 'orange',
         ],
 
-        // 🔹 Orders
-        [
-            'text' => 'Orders',
-            'route' => '',
-            'icon' => 'fas fa-receipt',
-            'icon_color' => 'blue',
-        ],
+        // // 🔹 Orders
+        // [
+        //     'text' => 'Orders',
+        //     'route' => '',
+        //     'icon' => 'fas fa-receipt',
+        //     'icon_color' => 'blue',
+        // ],
 
-        // 🔹 Carts
-        [
-            'text' => 'Carts',
-            'route' => '',
-            'icon' => 'fas fa-shopping-cart',
-            'icon_color' => 'green',
-        ],
+        // // 🔹 Carts
+        // [
+        //     'text' => 'Carts',
+        //     'route' => '',
+        //     'icon' => 'fas fa-shopping-cart',
+        //     'icon_color' => 'green',
+        // ],
 
         // 🔹 Reviews
         [
@@ -373,7 +373,7 @@ return [
         // 🔹 Shipments
         [
             'text' => 'Shipments',
-            'route' => '',
+            'route' => 'shipments.index',
             'icon' => 'fas fa-truck',
             'icon_color' => 'yellow',
         ],

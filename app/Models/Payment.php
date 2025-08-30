@@ -11,10 +11,20 @@ class Payment extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['payment_method', 'amount', 'payment_date', 'payment_status'];
-
+    // Include order_id for mass assignment
+    protected $fillable = [
+        'order_id',
+        'payment_method',
+        'amount',
+        'payment_date',
+        'payment_status'
+    ];
+    protected $casts = [
+        'payment_date' => 'datetime',
+    ];
     public function order()
     {
-        return $this->belongsTo(Order::class, 'order_id', 'id');
+        return $this->belongsTo(Order::class);
     }
 }
+    

@@ -4,55 +4,51 @@
 
 @section('content')
     <div class="admin-container">
-        <h2>Payments</h2>
+        <h1>Payments</h1>
 
-        {{-- Session messages --}}
-        @if (session()->has('success'))
-            <div class="alert alert-success">{{ session()->get('success') }}</div>
+        @if(session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
         @endif
 
-        @if (session()->has('updated'))
-            <div class="alert alert-success">{{ session()->get('updated') }}</div>
-        @endif
+        <a href="{{ route('payments.create') }}" class="btn btn-primary mb-3">Add Payment</a>
 
-        <a href="{{ route('payments.create') }}" class="btn btn-success mb-3">Add Payment</a>
-
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Method</th>
+                    <th>Order ID</th>
+                    <th>Payment Method</th>
                     <th>Amount</th>
-                    <th>Date</th>
+                    <th>Payment Date</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($payments as $payment)
+                @forelse($payments as $payment)
                     <tr>
                         <td>{{ $payment->id }}</td>
+                        <td>{{ $payment->order_id }}</td>
                         <td>{{ $payment->payment_method }}</td>
                         <td>${{ number_format($payment->amount, 2) }}</td>
                         <td>{{ $payment->payment_date }}</td>
+                        <td>{{ $payment->payment_status }}</td>
                         <td>
-                            <span
-                                class="badge 
-                                    {{ $payment->payment_status == 'Completed' ? 'bg-success' : ($payment->payment_status == 'Failed' ? 'bg-danger' : 'bg-warning') }}">
-                                {{ $payment->payment_status }}
-                            </span>
-                        </td>
-                        <td>
-                            <a href="{{ route('payments.show', $payment->id) }}" class="btn btn-info btn-sm"><i class="fas fa-clipboard-list"></i></a>
-                            <a href="{{ route('payments.edit', $payment->id) }}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                            <form action="{{ route('payments.destroy', $payment->id) }}" method="POST" style="display:inline;">
+                            <a href="{{ route('payments.show', $payment) }}" class="btn btn-info btn-sm"><i class="fas fa-clipboard-list"></i></a>
+                            <a href="{{ route('payments.edit', $payment) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                            <form action="{{ route('payments.destroy', $payment) }}" method="POST"
+                                style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fas fa-minus-circle"></i></button>
+                                <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fas fa-plus-square"></i></button>
                             </form>
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="7">No payments found.</td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
 

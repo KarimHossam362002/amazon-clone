@@ -20,7 +20,7 @@ class PaymentFactory extends Factory
     public function definition(): array
     {
         return [
-         
+            'order_id' => Order::inRandomOrder()->first()?->id,
             'payment_method' => $this->faker->randomElement(['Credit Card','PayPal','Bank Transfer','Cash']),
             'amount' => $this->faker->randomFloat(2, 50, 2000),
             'payment_date' => now(),

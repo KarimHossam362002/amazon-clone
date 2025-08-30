@@ -35,7 +35,11 @@
     </div>
 
     <div class="orders">Returns<br /><strong>& Orders</strong></div>
-    <div class="cart">🛒 Cart</div>
+    @auth
+      @if(Auth::user()->role === 'admin' || Auth::user()->role === 'user')
+        <div class="cart"> <a href="{{ route("cart.index") }}">🛒 Cart</a></div>
+      @endif
+    @endauth
   </div>
 </header>
 
@@ -48,6 +52,12 @@
         <a href="{{ route("profile.edit") }}">
           <li>Profile</li>
         </a>
+        <a href="{{ route("orders.index") }}">
+          <li>Orders</li>
+        </a>
+        {{-- <a href="{{ route(" cart.index") }}">
+          <li>Cart</li>
+        </a> --}}
       @endif
     @endauth
 
@@ -67,7 +77,7 @@
 <!-- Flash Messages -->
 @if(session('error'))
   <div id="flash-message" style="background:#ffcccc;color:#900;padding:10px;margin:10px auto;
-                    width:100%;max-width:100%;text-align:center;border-radius:6px;">
+                        width:100%;max-width:100%;text-align:center;border-radius:6px;">
     {{ session('error') }}
   </div>
 @endif

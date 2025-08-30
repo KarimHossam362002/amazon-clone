@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -15,13 +14,14 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('order_id')->unique()->nullable();
+            $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
             $table->enum('payment_method', ['Credit Card', 'PayPal', 'Bank Transfer', 'Cash']);
             $table->decimal('amount', 10, 2);
-            $table->dateTime('payment_date')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->dateTime('payment_date')->useCurrent();
             $table->enum('payment_status', ['Pending', 'Completed', 'Failed'])->default('Pending');
             $table->timestamps();
         });
+
     }
 
     /**
