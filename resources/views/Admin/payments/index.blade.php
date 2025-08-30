@@ -1,8 +1,8 @@
 @extends('adminlte::page')
 @section('title', 'Amazon | Payments')
 @section('css')
-        <link rel="icon" href="{{ asset('assets/img/logos/Amazon-icon.png') }}">
-    @endsection
+    <link rel="icon" href="{{ asset('assets/img/logos/Amazon-icon.png') }}">
+@endsection
 @section('title', 'Payments')
 
 @section('content')
@@ -37,13 +37,16 @@
                         <td>{{ $payment->payment_date }}</td>
                         <td>{{ $payment->payment_status }}</td>
                         <td>
-                            <a href="{{ route('payments.show', $payment) }}" class="btn btn-info btn-sm"><i class="fas fa-clipboard-list"></i></a>
-                            <a href="{{ route('payments.edit', $payment) }}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
+                            <a href="{{ route('payments.show', $payment) }}" class="btn btn-info btn-sm"><i
+                                    class="fas fa-clipboard-list"></i></a>
+                            <a href="{{ route('payments.edit', $payment) }}" class="btn btn-warning btn-sm"><i
+                                    class="fas fa-edit"></i></a>
                             <form action="{{ route('payments.destroy', $payment) }}" method="POST"
                                 style="display:inline-block;">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="fas fa-plus-square"></i></button>
+                                <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i
+                                        class="fas fa-minus-circle"></i></button>
                             </form>
                         </td>
                     </tr>
