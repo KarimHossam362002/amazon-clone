@@ -6,7 +6,7 @@
   </a>
 </p>
 **ERD**
-<a href="https://ibb.co/tMYTMsGz"><img src="https://i.ibb.co/tMYTMsGz/ERD.png" alt="ERD" width="100%" border="0"></a>
+<a href="https://ibb.co/tMYTMsGz"><img src="https://i.ibb.co/tMYTMsGz/ERD.png" alt="ERD" border="0"></a>
 
 ## Overview
 This project is an **E-commerce platform** built using **Laravel**, featuring an **Admin Dashboard** and an intuitive **User Experience** for managing products, orders, and more. It includes features for **product management**, **order tracking**, **cart management**, **payment integration**, and **shipment tracking**.
