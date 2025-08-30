@@ -1,8 +1,10 @@
 @extends('adminlte::page')
 
 @section('title', 'Review Details')
+
 @section("css")
     <link rel="stylesheet" href="{{ asset('assets/css/admin/review_details.css') }}">
+    <link rel="icon" href="{{ asset('assets/img/logos/Amazon-icon.png') }}">
 @endsection
 @section('content')
     <div class="admin-container">

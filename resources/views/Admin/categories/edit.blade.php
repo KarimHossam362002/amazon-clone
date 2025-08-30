@@ -1,7 +1,9 @@
 @extends('adminlte::page')
 
 @section('title', 'Edit Category')
-
+@section('css')
+        <link rel="icon" href="{{ asset('assets/img/logos/Amazon-icon.png') }}">
+    @endsection
 @section('content_header')
 <h1>Edit Category</h1>
 @stop

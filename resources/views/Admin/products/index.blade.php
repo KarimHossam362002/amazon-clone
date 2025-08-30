@@ -1,5 +1,9 @@
 {{-- <td class="d-flex"> --}}
     @extends('adminlte::page')
+    @section('title', 'Amazon | Products')
+    @section('css')
+        <link rel="icon" href="{{ asset('assets/img/logos/Amazon-icon.png') }}">
+    @endsection
     @section('content')
         <h2>Products</h2>
         @if (session()->has('success'))

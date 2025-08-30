@@ -15,7 +15,7 @@ class CartSeeder extends Seeder
     public function run(): void
     {
         Cart::factory()
-            ->count(5)
+            ->count(50)
             ->create()
             ->each(function ($cart) {
                 CartItem::factory()

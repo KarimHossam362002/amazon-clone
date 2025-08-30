@@ -1,6 +1,8 @@
 @extends('adminlte::page')
-@section('title', 'Shipments')
-
+@section('title', 'Amazon | Shipments')
+@section('css')
+        <link rel="icon" href="{{ asset('assets/img/logos/Amazon-icon.png') }}">
+    @endsection
 @section('content')
     <h2>Shipments</h2>
 

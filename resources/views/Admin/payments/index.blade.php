@@ -1,5 +1,8 @@
 @extends('adminlte::page')
-
+@section('title', 'Amazon | Payments')
+@section('css')
+        <link rel="icon" href="{{ asset('assets/img/logos/Amazon-icon.png') }}">
+    @endsection
 @section('title', 'Payments')
 
 @section('content')
