@@ -1,6 +1,8 @@
 # 🚀 **E-Commerce Laravel Dashboard - Admin & User**
 
-[Logo](https://ibb.co/KpSM1c2J)
+<p align="center">
+  <img src="https://i.ibb.co/KpSM1c2J" alt="Project Logo" width="400" />
+</p>
 
 ## Overview
 This project is an **E-commerce platform** built using **Laravel**, featuring an **Admin Dashboard** and an intuitive **User Experience** for managing products, orders, and more. It includes features for **product management**, **order tracking**, **cart management**, **payment integration**, and **shipment tracking**.
